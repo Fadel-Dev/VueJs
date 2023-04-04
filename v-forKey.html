@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3.2.47/dist/vue.global.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <ul v-for="todo in todos" :key="todo.id">
+            <li>{{todo.content}}</li>
+        </ul>
+    </div>
+
+    <script>
+        const vm = Vue.createApp({
+            data() {
+                return {
+                  todos: [
+                  {id:0 ,content:'Apprendre '},
+                   {id:1 ,content:'Manger '},
+                   {id:2 ,content:'Sport '}
+                  ]
+                  
+                }
+            }
+        }).mount('#app');
+    </script>
+</body>	
+
+</html>

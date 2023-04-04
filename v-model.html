@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" conthe girl is tent="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3.2.47/dist/vue.global.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+        <div id="app">
+            <input type="text" v-model="msg">
+            <button @click="addNote">Add  title</button>
+              <ul  v-for="title in titles">
+                <li>
+                    {{title}}
+                </li>
+              </ul>
+        </div>
+
+        <script>
+            const vm=Vue.createApp({
+                data() {
+                    return {
+                        titles:['you are not alone','will you be there',
+                    'the girl is mine'],
+                    msg:''
+                    }
+                },
+                methods : {
+                    addNote() {
+                        this.titles.push(this.msg);
+                    }
+                }
+            }).mount('#app')
+        </script>
+</body>	
+
+</html>
